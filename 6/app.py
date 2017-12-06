@@ -21,28 +21,27 @@ def solve1(file_name):
 
             row[i_max] = 0
             for i in range(max_val):
-                print((i_max + 1 + i) % (len(row) ))
                 row[(i_max + 1 + i) % (len(row))] += 1
-                print(row)
 
             count += 1
             tup = tuple(row)
             if tup in tup_list:
+                first_occurance_index = tup_list.index(tup)
+                loop_length = len(tup_list) - first_occurance_index
                 break;
             else:
                 tup_list.append(tup)
-            
+
 
 
 
         print("output 1:")
         print(count)
+        print("output 2:")
+        print(loop_length)
 
 
-def solve2(file_name):
-    print("output 2:")
-    	
+
 
 if __name__ == "__main__":
     solve1(sys.argv[1])
-    solve2(sys.argv[1])
